@@ -10,10 +10,10 @@
 
 <body>
 <div class="formBox">
-<h1 class="<?php echo $titleColor = isset($_GET["inputColor"]) ? $_GET["inputColor"] : "black" ?>">Hello
-    <?php echo $titleName = isset($_GET["inputName"]) ? $_GET["inputName"] : "World" ?></h1>
+<h1 class="<?php echo $titleColor = isset($_POST["inputColor"]) ? $_POST["inputColor"] : "black" ?>">Hello
+    <?php echo $titleName = isset($_POST["inputName"]) ? $_POST["inputName"] : "World" ?></h1>
 
-<form action="phpProject1.php" method="get">
+<form action="phpProject1.php" method="POST">
     Name: <input type="text" name="inputName">
     <br>
     Color: <input type="text" name="inputColor">
@@ -21,7 +21,20 @@
     <input type="submit">
 </form>
 
-<p> Your chosen color is: <?php echo isset($_GET["inputColor"]) ? $_GET["inputColor"] : "white" ?></p>
+<p> Your chosen color is: <?php echo isset($_POST["inputColor"]) ? $_POST["inputColor"] : "white" ?></p>
+</div>
+
+<div class="formBox">
+    <?php
+    $userArray = array();
+
+    if (isset($_POST["inputName"])) {
+        $userArray += array($_POST["inputName"] => $_POST["inputColor"]);
+        foreach($userArray as $name => $color) {
+            echo $name . " has chosen the color: " .  "<p class=\"{$color}\">{$color}</p><br>";
+        }
+    }
+    ?>
 </div>
 
 </body>
