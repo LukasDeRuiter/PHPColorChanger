@@ -9,15 +9,20 @@
 </head>
 
 <body>
-<h1 class="<?php echo $titleColor = isset($_GET["inputColor"]) ? $_GET["inputColor"] : "black" ?>">Hello world</h1>
+<div class="formBox">
+<h1 class="<?php echo $titleColor = isset($_GET["inputColor"]) ? $_GET["inputColor"] : "black" ?>">Hello
+    <?php echo $titleName = isset($_GET["inputName"]) ? $_GET["inputName"] : "World" ?></h1>
 
 <form action="phpProject1.php" method="get">
+    Name: <input type="text" name="inputName">
+    <br>
     Color: <input type="text" name="inputColor">
     <br>
     <input type="submit">
 </form>
 
 <p> Your chosen color is: <?php echo isset($_GET["inputColor"]) ? $_GET["inputColor"] : "white" ?></p>
+</div>
 
 </body>
 

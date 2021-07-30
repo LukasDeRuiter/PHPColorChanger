@@ -1,5 +1,19 @@
+body {
+    background-color: rgb(100, 100, 100);
+}
+
 .paragraph {
     font-size: 200px;
+}
+
+.formBox {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.4), transparent);
+    margin: auto;
+    width: 20rem;
+    border: 3px solid black;
+    align-items: center;
 }
 
 .black {
@@ -12,4 +26,20 @@
 
 .green {
     color: green;
+}
+
+.red {
+    color: red;
+}
+
+.blue {
+    color: blue;
+ }
+
+.purple {
+    color: purple;
+}
+
+.pink {
+    color: pink;
 }
